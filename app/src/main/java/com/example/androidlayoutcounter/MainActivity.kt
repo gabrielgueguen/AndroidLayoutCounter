@@ -29,4 +29,23 @@ class MainActivity : AppCompatActivity() {
             binding.apply{ invalidateAll() }
         }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        outState?.run{
+            putInt(STATE_COUNT, counter.count)
+        }
+        super.onSaveInstanceState(outState)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        savedInstanceState?.run{
+            counter.count = getInt(STATE_COUNT)
+        }
+    }
+
+    companion object{
+        val STATE_COUNT = "counterCount"
+    }
 }
