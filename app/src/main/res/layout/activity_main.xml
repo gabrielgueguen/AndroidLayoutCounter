@@ -34,7 +34,7 @@
             android:layout_height="@dimen/layout_height_full"
             android:layout_marginStart="@dimen/margin_5"
             android:layout_marginEnd="@dimen/margin_5"
-            android:background="?android:attr/colorPressedHighlight"
+            android:background="?attr/colorSecondary"
             android:gravity="center"
             android:text="@{Integer.toString(counter.count)}"
             android:textAlignment="center"
